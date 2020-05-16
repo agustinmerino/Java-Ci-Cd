@@ -1,5 +1,4 @@
-pipeline {
-    agent any
+
     node{
         stage('CMS'){
             echo 'Gathering code from version control...'
@@ -18,4 +17,3 @@ pipeline {
         }       
 
     }
-}
