@@ -1,5 +1,6 @@
-
-    node{
+pipeline {
+    agent any
+    stages {
         stage('CMS'){
             echo 'Gathering code from version control...'
             git branch:'${branch}' , url: 'https://github.com/agustinmerino/hello-world.git'
