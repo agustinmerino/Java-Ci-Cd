@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build Application') {
             steps {
-                sh '/opt/maven/bin/mvn -f pom.xml clean package'
+                sh '/opt/maven/bin/mvn -f pom.xml clean install package'
             }
             post {
                 success {
