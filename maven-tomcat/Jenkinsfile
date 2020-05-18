@@ -5,12 +5,12 @@ pipeline {
             steps {
                 echo 'Gathering code from version control...'
                 scm {
-                    git("https://github.com/agustinmerino/hello-world.git", '${branch}')
+                    git branch:'${branch}' , url: 'https://github.com/agustinmerino/hello-world.git'
                 }
                 triggers {
                     scm('* * * * *')
                 }
-            }            
+            }
         }
         stage('Build Application') {
             steps {
