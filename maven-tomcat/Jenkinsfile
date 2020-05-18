@@ -4,11 +4,13 @@ pipeline {
         stage('CMS'){
             steps {
                 echo 'Gathering code from version control...'
-                git branch:'${branch}' , url: 'https://github.com/agustinmerino/hello-world.git'
-            }
-            triggers {
-                scm('* * * * *')
-            }
+                scm {
+                    git("https://github.com/agustinmerino/hello-world.git", '${branch}')
+                }
+                triggers {
+                    scm('* * * * *')
+                }
+            }            
         }
         stage('Build Application') {
             steps {
