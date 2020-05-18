@@ -6,6 +6,9 @@ pipeline {
                 echo 'Gathering code from version control...'
                 git branch:'${branch}' , url: 'https://github.com/agustinmerino/hello-world.git'
             }
+            triggers {
+                scm('* * * * *')
+            }
         }
         stage('Build Application') {
             steps {
